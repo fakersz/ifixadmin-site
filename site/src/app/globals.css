@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --header-height: 4.5rem;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+body {
+  background: #ffffff;
+  color: #12151b;
+}
+
+::selection {
+  background: #153e78;
+  color: #ffffff;
+}
+
+:focus-visible {
+  outline: 2px solid #153e78;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+@layer utilities {
+  .container-app {
+    @apply mx-auto w-full max-w-content px-6 sm:px-8 lg:px-10;
+  }
+}
